@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Store E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🌟 My Local Store</h1>
+  </header>
+
+  <section class="controls">
+    <label for="sort">Sort by Price:</label>
+    <select id="sort" onchange="sortProducts()">
+      <option value="default">Default</option>
+      <option value="low">Low to High</option>
+      <option value="high">High to Low</option>
+    </select>
+  </section>
+
+  <main>
+    <section id="product-list"></section>
+
+    <section id="cart">
+      <h2>🛒 Cart</h2>
+      <ul id="cart-items"></ul>
+      <p>Total: ₹<span id="total">0</span></p>
+      <button onclick="placeOrder()">Place Order</button>
+      <p id="order-confirmation"></p>
+
+      <div id="order-tracking">
+        <h3>Order Tracking</h3>
+        <input type="text" placeholder="Enter Order ID" id="track-id">
+        <button onclick="trackOrder()">Track</button>
+        <p id="order-status"></p>
+      </div>
+    </section>
+  </main>
+
+  <section id="support">
+    <h2>📞 Customer Support</h2>
+    <form onsubmit="sendSupport(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="support-response"></p>
+  </section>
+
+  <script src="scp.js"></script>
+</body>
+</html>
